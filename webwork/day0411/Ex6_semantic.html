@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+
+        body{
+            background: #222;
+            height: 100%;
+            margin:0;
+        }
+
+        #container{
+            position: absolute;
+            left:50%;
+            margin-left: -450px;
+            width:1000px;
+            height: 100%;
+            background: #fff;
+        }
+
+        aside{
+            float: left;
+            width: 250px;
+            padding:20px 50px;
+            height: 100%;
+            background: rgb(204,240,240);
+        }
+
+        aside>div>img{
+            width: 120px;
+            height: 120px;
+            border: 1px solid gray;
+        }
+
+        #main{
+            float:left;
+            padding:20px;
+            margin:30px;
+        }
+
+        table{
+            width:70%;
+            border:1px solid #222;
+            border-collapse: collapse;
+        }
+
+        thead{
+            background: #eee;
+        }
+        th,td{
+            border:1px solid #ccc;
+            padding:5px;
+            font-size: 0.9em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <aside>
+            <div id="namecard">
+                <img src="../image/talent/10.jpg"
+                <h3>Candy Lee</h3>
+                <P>오늘을 즐겁게 살자!!</P>
+            </div>
+
+            <div id="detail">
+                <p>Seoul,Korea</p>
+                <p>Candy@naver.com</p>
+            </div>
+
+            <div id="sns">
+                <h2>SNS</h2>
+                <ul>
+                    <li>
+                        <a herf="http://facebook.com">facebook</a>
+                    </li>
+                    <li>
+                        <a herf="http://www.instagram.com">instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div id="main">
+            <section>
+                <h3 class="subtitle">Profile</h3>
+                <p>
+                    <mark>프론트 앤드 웹 기술</mark>에 관심이 많아 프로젝트 개발중입니다
+                    <br>현재는 스타트업에서 백앤드 개발자로 일하고 있습니다
+                </p>
+            </section>
+
+            <section>
+                <h3 class="subtitle">Employeement History</h3>
+                <ul>
+                    <li> 백엔드 개발
+                        <ul>
+                            <li>CSS</li>
+                            <li>Spring Boot</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="subtitle">Education</h3>
+                <table>
+                    <caption><b>학력사항</b></caption>
+                    <thead>
+                        <tr>
+                            <th>출신학교</th><th>전공</th>
+                            <th>기간</th><th>구분</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**대학교</td>
+                            <td>영어영문학과</td>
+                            <td>2015.3~2020.2</td>
+                            <td>졸업</td>
+                        </tr>
+                        <tr>
+                            <td>**고등학교</td>
+                            <td>-</td>
+                            <td>2012.3~2015.2</td>
+                            <td>졸업</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

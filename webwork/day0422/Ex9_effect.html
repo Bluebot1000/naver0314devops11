@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=East+Sea+Dokdo&family=Jua&family=Gaegu&family=Gamja+Flower&family=Pacifico&family=Single+Day&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <style>
+        body *{
+            font-family: 'Jua';
+        }
+    </style>
+</head>
+<body>
+    <h3>제이쿼리의 effect함수들</h3>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn1">show</button>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn2">hide</button>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn2-1">toggle</button>
+    <br>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn3">slideUp</button>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn4">slideDown</button>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn5">slideToggle</button>
+    <br>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn6">fadeIn</button>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn7">fadeOut</button>
+    <button type="button" class="btn btn-sm btn-outline-warning"
+    id="btn8">fadeToggle</button>
+    <br>
+    <hr>
+    <h2>Effect Test Message!!</h2>
+    <img src="../image/mycar/mycar13.png" width="200">
+
+    <script>
+        $("#btn1").click(function(){
+            $("h2").show();
+            $("img").show();
+        })
+        $("#btn2").click(function(){
+            $("h2").hide();
+            $("img").hide();
+            
+        })
+        $("#btn2-1").click(function(){
+            
+            $("h2").toggle();
+            $("img").toggle();
+        })
+        $("#btn3").click(function(){
+            $("h2").slideUp();
+            $("img").slideUp();
+            
+        })
+        $("#btn4").click(function(){
+            $("h2").slideDown();
+            $("img").slideDown();
+            
+        })
+        $("#btn5").click(function(){
+            $("h2").slideToggle();
+            $("img").slideToggle();
+            
+        })
+        $("#btn6").click(function(){
+            $("h2").fadeIn();
+            $("img").fadeIn();
+        })
+        $("#btn7").click(function(){
+            $("h2").fadeOut();
+            $("img").fadeOut();
+        })
+        $("#btn8").click(function(){
+            $("h2").fadeToggle(10000);
+            $("img").fadeToggle(10000);
+            
+        })
+    </script>
+</body>
+</html>

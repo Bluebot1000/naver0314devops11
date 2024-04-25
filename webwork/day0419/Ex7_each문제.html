@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=East+Sea+Dokdo&family=Jua&family=Gaegu&family=Gamja+Flower&family=Pacifico&family=Single+Day&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        body *{
+            font-family: 'Jua';
+        } 
+    </style>
+    <script>
+        $(function(){
+            //1. 모든 img.small 태그의 너비 높이 border 알아서 css함수로 넣기
+            $("img.small").css({
+                "width":"80px",
+                "height":"80px",
+                "border":"1px solid pink"
+            });
+            //2/ 사진은 쇼핑몰 사진의 1~10까지 차례대로
+
+            
+            $("img.small").each(function(idx){
+                    $(this).attr("src",`../image/shop/${idx+1}.jpg`)
+            });
+
+
+            //3. img.large 너비 높이 굵게 함수로 넣기
+            $("img.large").css({
+                "width":"300px",
+                "height":"350px",
+                "border":"3px solid black",
+                "border-width":"10px",
+                "margin-left":"80px"
+            });
+            //4. 이벤트 : img.small에 마우스를 올리면 그 사진이 img.large에 나오게 하기
+            //이때 마우스를 올리면 shadw 생기고 벗어나면 없애기
+
+            $("img.small").hover(function(){
+                $("img.large").attr("src",$(this).attr("src")).css("box-shadow","5px 5px 5px gray")
+            },function(){
+                $("img.large").css("box-shadow","")
+            });//.shadow를 만들어서 클래스를 지웠다 넣었다 해도 된다.
+
+            //5. 기본사진 food 사진으로 바꾸기
+            $("img.large").attr("src","../image/food/1.jpg")
+        })
+    </script>
+
+</head>
+<body>
+    <h3 class="alert alert-warning">10개의 이미지 태그에 each문으로 사진 넣기</h3>
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+
+    <br><br>
+    <img src="" class="large">
+</body>
+</html>

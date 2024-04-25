@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+        }
+        /*1024이상인 경우*/
+        @media all and (min-width:1024px){
+            body{
+                background-color: aquamarine;
+                h1{color:blanchedalmond}
+                background: url(../image/shop/14.jpg) 30px 100px repeat-x;
+            }
+        }
+
+        @media all and (min-width:761px) and (max-width:1023px){
+            body{
+                background-color: rgb(43, 19, 128);
+                h1{color:blanchedalmond}
+            }
+        }
+
+        @media all and (min-width:361px) and (max-width:760px){
+            body{
+                background-color: rgb(100, 1, 12);
+                h1{color:blanchedalmond}
+                background: url(../image/shop/15.jpg) 30px 100px no-repeat;
+                background-position: 100px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>반응형 테스트</h1>
+</body>
+</html>

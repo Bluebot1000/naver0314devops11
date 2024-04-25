@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sum=0;
+        for(let i=1 ; i<1001 ; i++){
+            sum+=i;
+        }
+        document.write(sum);
+    </script>
+    <hr>
+    <script>
+        for(let j=2 ; j<=9 ; j++){
+            let p=`[ &nbsp&nbsp&nbsp&nbsp  ${j}단  &nbsp&nbsp&nbsp&nbsp ]`;
+            document.write(p+`${j==9?"<br>":""}`);
+        }
+        for(let i=1 ; i<=9 ; i++){
+            for(let j=2 ; j<=9 ; j++){
+                let s=`${j} x ${i} = ${i*j}`
+                document.write(s+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+`${i*j<10?"   ":""}`
+                +`${j==9?"<br>":""}`)
+            }
+            
+        }
+    </script>
+    <hr>
+    <h2>**JSP에서 ``,"",''의 사용법</h2>
+    
+    <script>
+        let p="<img src='../image/food/1.jpg'>"; //""을 두번 쓸 수 없으니 안에다가 ''를 쓸 수 있어요
+        document.write(p);
+
+        let l=`<img src="../image/food/1.jpg">`; //""을 ``이걸로 대체할 수 있어요
+        document.write(l);
+
+        let t="../image/food/10.jpg";//&nbsp;정상적으로 작동 - 텍스트인 경우에만
+        let tt=`<img src=${t}>`;//&nbsp;이건 정상적으로 작동x - html 태그를 넣었을 땐 안되요 
+        document.write(tt);
+        document.write(t);//띄어쓰기 그대로 나오네
+    </script>
+    <hr>
+    <script>
+        var n=prompt("숫자를 입력하세요.");
+        let msg="";
+
+        if(n !== null){//prompt에서 취소버튼을 안눌렀다면
+            var nFact=1;
+            var i=1;
+
+            while(i<=n){
+                nFact*=i;
+                i++; // 이게 왜 중요하냐면 와일에서는 조건이 없기때문에 조건이 i하나씩 늘어가면서 n보다 작을때까지 하기 때문
+            }
+            msg = n + "! =" + nFact;
+        }
+        else{
+            msg = "값이 입력되지 않았습니다."
+        }
+
+        document.write(msg);
+
+    </script>
+    <hr>
+    <pre> <!--자바에서 """이것처럼 그대로 출력되는 태그다--> 
+        조건문에서 break를 한다는 것은 그 조건까지 가기도 전에 빠져나온다는 것입니다.
+        continue는 언제나처럼 그 반복문중 어느 하나를 건너뛰겠다는 것입니다.
+        if(i===3) break; / continue; 3일때 반복문 자체를 끝낸다 / 3일때의 반복 결과를 반환하지 않고 4일때로 넘어감
+        **자바스크립트에선 ===, !==이렇게 연산비교를 합니다
+    </pre>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=East+Sea+Dokdo&family=Jua&family=Gaegu&family=Gamja+Flower&family=Pacifico&family=Single+Day&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        body *{
+            font-family: 'Jua';
+        }
+
+        div.mytooltip{
+            position: absolute;
+            line-height: 1.5;
+            color: black;
+            width: 200px;
+            background-color: #f90;
+            border: 2px solid white;
+            padding: 15px;
+            font-size: 14px;
+            border-radius: 30px;
+            opacity: 0.8;
+            display: none;
+        }
+
+        .view{
+            cursor: pointer;
+            background-color: #ccc;
+            font-size: 1.3em;
+        }
+
+        ol.today li{
+            cursor: pointer;
+            font-size: 22px;
+            width: 200px;
+        }
+        ol.today li:hover{
+            background-color: rgba(0,0,0,0.3);
+        }
+    </style>
+    <script>
+        $(function(){
+            //bind:이벤트를 묶어서 한꺼번에 처리
+            $("a").bind({
+                mousemove:function(e){
+                    //e.pageX:커서의 x좌표,e.pageY:커서의 y좌표,
+                    //툴팁의 위치를 마우스포인터 위치로 변경
+                    $("div.mytooltip").css({
+                        'left':e.pageX+'px',
+                        'top':e.pageY+"px"
+                    });
+                },
+                mouseover:function(e){
+                    $("div.mytooltip").fadeIn('fast');
+                    $("div.mytooltip").html(
+                        ` Java<br>
+                        HTML<br>
+                        CSS<br>
+                        Mysql`
+                    ).css("background-color","#f90");
+                },
+                mouseout:function(e){
+                    $("div.mytooltip").fadeOut('fast');
+                }
+            });
+
+            $("b.view").bind({
+                mousemove:function(e){
+                    //e.pageX:커서의 x좌표,e.pageY:커서의 y좌표,
+                    //툴팁의 위치를 마우스포인터 위치로 변경
+                    $("div.mytooltip").css({
+                        'left':e.pageX+'px',
+                        'top':e.pageY+"px"
+                    });
+                },
+                mouseover:function(e){
+                    $("div.mytooltip").fadeIn('fast');
+                    //b태그의 text 와 color 얻기
+                    let text=$(this).text();
+                    let color=$(this).attr("color");
+
+                    $("div.mytooltip").html(
+                        `
+                        현재 관심 사항<br>
+                        ${text}`
+                    ).css("background-color",color);
+                },
+                mouseout:function(e){
+                    $("div.mytooltip").fadeOut('fast');
+                }
+            });
+
+            $("ol.today>li").bind({
+                mousemove:function(e){
+                    //e.pageX:커서의 x좌표,e.pageY:커서의 y좌표,
+                    //툴팁의 위치를 마우스포인터 위치로 변경
+                    $("div.mytooltip").css({
+                        'left':e.pageX+'px',
+                        'top':e.pageY+"px"
+                    });
+                },
+                mouseover:function(e){
+                    //photo 와 text를 얻어서
+                    //툴팁의 html 에 넣어주세요
+                    let photo=$(this).attr("photo");
+                    let sname=$(this).text();
+                    
+                    $("div.mytooltip").fadeIn('fast');
+
+                    $("div.mytooltip").html(
+                        `<h5>${sname}</h5>
+                        <img src="${photo}" width=100>`
+                    ).css('background-color',rgb(255,200,255));
+
+                },
+                mouseout:function(e){
+                    $("div.mytooltip").fadeOut('fast');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h4 class="alert alert-info">Tooltip 링크 부분에 마우스를 올려보세요</h4>
+    <br><br>
+    <a style="font-size: 25px; cursor: pointer;">
+    Tooltip Tooltip Tooltip Tooltip Tooltip Tooltip
+    Tooltip Tooltip Tooltip Tooltip
+    </a>
+    <pre>
+        어린 시절 나는 <b class="view" color="pink">달리기 선수</b>였다. 주전자로 마른 목을 축이며 텅 빈 운동장을 달리고 또 달렸다. 
+        심장이 용수철처럼 튕겨 나왔으나, 성장판이 열린 날쌘 친구들을 앞지를 수는 없었다. 
+        승부욕을 어쩌지 못하던 나는, 마지막 계주에서 뒤처진 채 꺼이꺼이 눈물을 쏟았다. 
+        그때 멈추지 않았다면, <b class="view" color="green">나</b>는 지금 인생의 어느 곳을 뛰고 있을까.
+        남녀노소 불문하고 점점 더 많은 사람이 도심과 트랙을 달리고 있다. 
+        족저근막염이나 <b class="view" color="yellow">슬개골</b> 마모로 통증을 호소하다가도, 나을만하면 운동화 끈을 조여 매고 두 발을
+        동력 삼아 심박수를 올리는 러너들을 나는 심심찮게 보았다.
+        꾸준한 <b class="view" color="blue">달리기</b>로 삶과 일의 루틴을 쌓고 자신감을 충전하는 사람들, 
+        함께 달린다는 이유로 동지애를 느끼는 사람들.
+    </pre>
+    <hr>
+    <h2>오늘 나의 식사 및  쇼핑 목록입니다</h2>
+    <ol type="1" class="today">
+        <li photo="../image/food/1.jpg">에그 샌드위치</li>
+        <li photo="../image/food/11.jpg">망고빙수</li>
+        <li photo="../image/food/8.jpg">BLT 샌드위치</li>
+        <li photo="../image/food/3.jpg">찌개류</li>
+    </ol>
+    <div class="mytooltip">
+        Java<br>
+        HTML<br>
+        CSS<br>
+        Mysql
+    </div>
+</body>
+</html>

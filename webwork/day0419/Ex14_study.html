@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            color: red;
+        }
+        body *{
+            text-align: center;
+        }
+        b{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>3의 배수를 찾아라</h1>
+    <script>
+        let a=prompt("3의 배수를 1에서 어디까지 찾을 까요?");
+        let con=0;
+        let text="";
+        let i=1; //while은 두가지입니다. 조건문을 true로 해서 빠져나오는 것을 지정해주거나/ 조건문 자체를 i++같은 걸 만들어서 하거나
+       
+        while(i<=a){
+            if(i%3===0){
+                text+=`${i}, `;
+                con++;
+            }
+            i++;
+        }
+
+        let x=text.substring(0,text.length-2); // slice, substring 함수는 문자배열등을 잘라서 가져올때 유용함
+        document.write(x);
+        let s=`<h3>${a}까지 3의 배수의 개수 : ${con}</h3>`;
+        document.write(s);
+    </script>
+</body>
+</html>

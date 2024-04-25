@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body *{
+            font-family:'Times New Roman', Times, serif;
+        }
+        ul,li{
+        list-style:none;
+    }
+    nav{
+        display:block;
+    }
+    ul{margin-bottom:30px}
+    
+    .menu1 li{
+        background-color:#999;
+        color:#fff;
+        width:85px;
+        display:block;
+        margin-bottom:3px;
+        height:33px;
+        padding:8px;
+        transition:width 1.5s;
+    }
+
+    .menu1 li:hover{
+        color:#900;
+        letter-spacing: 3px;
+        width:400px
+    }
+
+    .menu2{height: 100px;}
+    .menu2 li{
+        float:left;
+        background-color: #cf1234;
+        color:yellow;
+        margin-right: 3px;
+        width:85px;
+        height:35px;
+        text-align: center;
+        line-height:35px;
+        transition: height 1.2s;
+    }
+
+    .menu2 li:hover{
+        background-color: aqua;
+        height:100px;
+        color:azure;
+    }
+
+    .menu3{height: 100px;}
+    .menu3 li{
+        float:left;
+        background-color: #0f6121;
+        color:yellow;
+        margin-right: 3px;
+        width:85px;
+        height:35px;
+        text-align: center;
+        line-height:35px;
+        transform: rotate(0deg);
+        transition: all 1.2s;
+    }
+
+    .menu3 li:hover{
+        background-color: aqua;
+        color:azure;
+        transform: rotate(50deg);
+    }
+
+    #main_menu .menu4 li{
+        color:#333;
+        background-color: aliceblue;
+        width:150px;
+        display:block;
+        text-align: center;
+        padding : 5px;
+        transition : all 0.3s;
+    }
+
+    #main_menu .menu4 li:hover{
+        color:#900
+        background-color:burlywood;
+        background:url(../image/mycar/mycar13.png) no-repeat right center;
+        background-size:30px 30px;
+        font-weight:bold;
+        height:20px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <ul class="menu1">
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+        <li>Menu5</li>
+    </ul>
+    <div style="clear:both;"></div>
+    <ul class="menu2">
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+        <li>Menu5</li>
+    </ul>
+    <div style="clear:both;"></div>
+    <ul class="menu3">
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+        <li>Menu5</li>
+    </ul>
+    <div style="clear:both;"></div>
+    <nav id="main_menu">
+    <ul class="menu4">
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+        <li>Menu5</li>
+    </ul>
+    </nav>
+</body>
+</html>

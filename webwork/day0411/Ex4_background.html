@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body *{
+            text-align: center;
+        }
+        div.box div{
+            border: 1px solid salmon;
+            width:400px;
+            height: 130px;
+            margin-bottom:10px;
+        }
+
+        div.box>div.a{
+            background-image:url('../image/mycar/mycar13.png');
+            background-size: 150px 150px;
+            background-repeat: repeat-x;
+        }
+
+        div.box>div.b{
+            background-image:url('../image/mycar/mycar11.png');
+            background-size: 10em;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+        }
+
+        div.box>div.c{
+            background-image:url('../image/mainImage/K-045.png');
+            background-size: 100% 100%;
+            opacity: 0.5; /*투명도 설정(0.0~1.0)*/
+        }
+
+        div.box>div.d{
+            background-image:url('../image/mainImage/K-039.png');
+            background-size: cover;
+            
+        }
+        div.box>div.e{
+            background-color: blueviolet;
+        }
+        div.box>div.f{
+            background-image:url('../image/mainImage/K-039.png');
+            background-size: contain;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="a">One</div>
+        <div class="b">Two</div>
+        <div class="c">Three</div>
+        <div class="d">Four</div>
+        <div class="e">Five</div>
+        <div class="f">Six</div>
+    </div>
+</body>
+</html>

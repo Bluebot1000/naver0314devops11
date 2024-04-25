@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=East+Sea+Dokdo&family=Jua&family=Gaegu&family=Gamja+Flower&family=Pacifico&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body *{
+            font-family: 'Jua';
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script><!--이게 있어야 제이쿼리됨-->
+    <script>
+        // window.onload=function(){
+        //     alert("스타뜨!!!");
+        // }
+        // $(document).ready(function(){
+        //     alert("스타트2")
+        // });
+        $(function(){//달려표시가 제이쿼리 표시입니다.
+            //alert("스타트3")
+            //css함수 : 스타일값을 변경하거나 스타일값을 얻거나 파라메타 하나 쓰면 얻는 거 두개 쓰면 수정하기
+            $("div.hello").css("color","lightblue")//변경
+            let color1=$("div.hello").css("color");//글자색을 반환
+            $("#bit2").css("background",color1)
+
+            //여러스타일을 변경하고자 할 경우 방법 2가지
+
+            //방법1
+            //$("div.bit3>div.bit4").css("color","magenta").css("background-color","yellow")
+
+            //방법2
+            $("div.bit3>div.bit4").css({
+                "color":"magenta",
+                "background-color":"yellow"
+            })
+
+            //같은 셀렉터 중에 하나씩 다른 값을 적용할 경우 eq,gt,lt
+            //$("div.bit3>div.bit4:eq(1)").css("border","5px solid gray")
+
+            $("div.bit3>div.bit4").eq(1).css("border","3px solid gray")
+
+            $(".hello").css({
+                "background-color":"orange",
+                "margin-top":"20px",
+                "width":"200px",
+                "border":"3px dotted red"
+            })
+
+            //바디 태그의 모든 하위태그의 글꼴 변경
+            $("body *").css("font-family","Dancing Script")
+
+            //동시적용
+            $("#bit,#bit2").css("text-decoration","underline")
+        })
+    </script>
+</head>
+<body>
+    <div class="hello">
+        Div class hello
+    </div>
+    <h3 class="hello">h3 class hello</h3>
+    <b id="bit">b tag id bit</b>
+    <h1 id="bit2">h1 id bit2</h1>
+    <div class="bit3">
+        bit3 class
+        <div class="bit4">
+            bit3 아래 bit4 class 1
+        </div>
+        <div class="bit4">
+            bit3 아래 bit4 class 2
+        </div>
+    </div>
+</body>
+</html>
