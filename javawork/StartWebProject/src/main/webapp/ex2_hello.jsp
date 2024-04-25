@@ -18,51 +18,43 @@
     </style>
 </head>
 <body>
-
-<h3>html 주석과 jsp 주석 비교하기</h3>
-<!--  html 주석입니다, <%=new Date()%>-->
-<%-- jsp 주석입니다. <%=new Date()%> --%>
-
-<h5>선언문의 변수는 위치상관없이 출력가능하다</h5>
-<h5>이름 : <%=name %></h5>
-<h5>나이 : <%=age %>세</h5>
-<%!
-	//선언문이라고 부른다
-	//여기서 선언하는 변수는 서블릿으로 변환시 위치 상관없이 멤버변수로 선언된다
-	String name="송혜교";
-	int age=30;
-%>
-
-<h5>이름2 : <%=name %></h5>
-<h5>나이2 : <%=age %>세</h5>
-
+<h5>자바영역의 배열변수를 table 을 이용해서 출력해보자</h5>
 <%
-	//스크립트릿이라고 부른다(scriptlet)
-	//자바영역:서블릿변환시 특정 메소드 내의 지역변수로 선언된다
-	String addr="서울시 강남구";
-	//내장객체중 out 을 이용해서 출력해도 된다
-	out.print("<h5 class='alert alert-danger'>나의 주소는 "+addr+"입니다</h5>");
+	String []colors={"red","orange","hotpink","green","gray"};
 %>
-<h5>주소 : <%=addr %></h5>
+<table class="table table-striped" style="width: 200px;">
+	<caption align="top"><b>색상 배열 출력</b></caption>
+	<tr class="table-danger">
+		<th>번호</th><th>색상</th>
+	</tr>
+	<%
+	for(int i=0;i<colors.length;i++)
+	{%>
+		<tr>
+			<td><%=i+1%></td>
+			<td style="background-color: <%=colors[i]%>">
+			<%=colors[i] %></td>
+		</tr>
+	<%}
+	%>
+</table>
+<hr>
+<%
+	String name="신민아";
+	String addr="서울시 강남구";
+	int age=32;
+	String blood="AB형";
+	String photo="./image/17.jpg";
+	String []hobby={"자바공부","스프링공부","제이쿼리공부","게임","웹툰"};
+%>
+<table class="table table-bordered" style="width: 400px;">
+	<tr>
+		<td width="200" rowspan="4">
+			<img src="<%=photo%>" width="190">
+		</td>
+		<td width="60" class="table-danger">이름</td>
+		<td><%=name %></td>
+	</tr>
+</table>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
