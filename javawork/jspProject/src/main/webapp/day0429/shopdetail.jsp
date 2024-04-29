@@ -1,3 +1,6 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="data.dao.ShopDao"%>
+<%@page import="data.dto.ShopDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,7 +19,55 @@
         }
     </style>
 </head>
+<%
+	//shopidx int 타입으로 읽기
+	int shopidx=Integer.parseInt(request.getParameter("shopidx"));
+	
+	//dao 선언
+	ShopDao dao=new ShopDao();
+	
+	//dto 데이타 가져오기
+	ShopDto dto=dao.getSangpum(shopidx);
+	
+	//날짜포멧양식 지정
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:MM");
+%>
 <body>
-
+	<div style="margin:10px; width:500px;">
+		<h2><b>상품명 : <%=dto.getSname() %></b></h2>
+		<span style="font-size:15px; color:gray;">
+			등록일 : <%=sdf.format(dto.getWriteday()) %>
+		</span>
+		<table>
+			<tr>
+			<td width="300">
+				<img src="<%=dto.getSphoto()%>"
+				style="border : 9px groove pink; margin:10px;">
+			</td>
+			<td>
+				<h5>가 격 : <%=dto.getSprice()%>원</h5>
+				<h5 style="background-color:<%=dto.getScolor()%>">
+				색 상 : <%=dto.getScolor()%>원</h5>
+				<h5>수 량 : <%=dto.getScount() %>개</h5>
+				<h5>총금액 : <%=dto.getScount()*dto.getSprice() %>원</h5>
+			</td>
+			</tr>
+			<tr>
+			<td colspan="2" align="left" style="padding:20px"> <!-- padding 표 내부 마진 -->
+				<button type="button" class="btn btn-outline-danger btn-sm" style="width:80px;"
+				onclick="location.href='shoplist.jsp'">
+				목록</button>
+				<button type="button" class="btn btn-outline-danger btn-sm" style="width:80px;"
+				onclick="location.href='shopupdateform.jsp?shopidx=<%=dto.getShopidx()%>'">
+				수정</button>
+				<button type="button" class="btn btn-outline-danger btn-sm" style="width:80px;">
+				삭제</button>
+				<button type="button" class="btn btn-outline-danger btn-sm" style="width:80px;"
+				onclick="location.href='shopform.jsp'">
+				상품추가</button>
+			</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
