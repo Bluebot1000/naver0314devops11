@@ -202,11 +202,11 @@ insert into shop values (null,'티셔츠', 12000, 'white');
 insert into shop values (null,'모자', 26000, 'black');
 select * from shop;
 
-insert into cart values (null,'최현욱', 6, now());
-insert into cart values (null,'송혜교', 7, now());
-insert into cart values (null,'정진욱', 8, now());
-insert into cart values (null,'전종서', 9, now());
-insert into cart values (null,'이효리', 10, now());
+insert into cart values (null,'최현욱', null, now());
+insert into cart values (null,'송혜교', null, now());
+insert into cart values (null,'정진욱', null, now());
+insert into cart values (null,'전종서', null, now());
+insert into cart values (null,'이효리', null, now());
 select * from cart;
 
 -- join 1
